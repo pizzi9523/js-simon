@@ -32,7 +32,7 @@ function timer() {
     let seconds = 0;
     let clock = setInterval(() => {
         seconds++
-        document.querySelector(".container").innerHTML = seconds
+        containerElement.innerHTML = seconds
         if (seconds == 30) {
             clearInterval(clock)
         }
@@ -71,24 +71,20 @@ function myfunction() {
         }) */
         //console.log(counter);
         //console.log(`Hai indovintato ${counter} numeri e sono ${right_numbers}`);
-        document.querySelector(".container").innerHTML = `Hai indovinato ${counter}`;
+        containerElement.innerHTML = `Hai indovinato ${counter}`;
         if (counter > 1) {
-            document.querySelector(".container").insertAdjacentHTML("beforeend", ` numeri e sono: `)
+            containerElement.insertAdjacentHTML("beforeend", ` numeri e sono: `)
             right_numbers.forEach(number => {
-                document.querySelector(".container").insertAdjacentHTML("beforeend", ` ${number} `)
+                containerElement.insertAdjacentHTML("beforeend", ` ${number} `)
             })
         } else if (counter == 1) {
-            document.querySelector(".container").insertAdjacentHTML("beforeend", ` numero ed è: `)
+            containerElement.insertAdjacentHTML("beforeend", ` numero ed è: `)
 
-            document.querySelector(".container").insertAdjacentHTML("beforeend", ` ${right_numbers} `)
+            containerElement.insertAdjacentHTML("beforeend", ` ${right_numbers} `)
         } else {
-            document.querySelector(".container").insertAdjacentHTML("beforeend", ` numeri`)
+            containerElement.insertAdjacentHTML("beforeend", ` numeri`)
         }
         document.getElementById("start").style.display = "none"
         document.getElementById("restart").style.display = "block"
-
-
-
-
     }, 31000)
 }
